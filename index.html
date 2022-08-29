@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<head>
+<style>
+body {
+	background: linear-gradient(90deg, #000060, #300040);
+	display: block;
+	}
+	* {
+	color:white;
+	font-family: Arial;
+	}
+	.box {
+  float: left;
+  height: 20px;
+  width: 20px;
+  border: 1px solid black;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+</style>
+</head>
+<body>
+	<h1>
+	Wykres niedopierdolenia umysłowego
+	</h1>
+	<div><div class='box red'></div> - Rambo</div>
+<br>
+<div><div class='box green'></div> - Rakos</div>
+<br>
+<div><div class='box blue'></div> - Sexon</div>
+<br>
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<script>
+var xValues = ["20.08.2022","21.08.2022","22.08.2022","23.08.2022","24.08.2022","25.08.2022","26.08.2022","27.08.2022","28.08.2022","29.08.2022"];
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{ 
+      data: [860,1140,1060,1060,1070,1110,1330,2210,7830,35894],
+      borderColor: "red",
+      fill: false
+    }, { 
+      data: [30000,30000,30000,30000,20000,30000,30000,30000,30000,30000],
+      borderColor: "green",
+      fill: false
+    }, { 
+      data: [300,700,2000,5000,6000,4000,2000,1000,200,12843],
+      borderColor: "blue",
+      fill: false
+    }]
+  },
+  options: {
+    legend: {display: false}
+  }
+});
+</script>
